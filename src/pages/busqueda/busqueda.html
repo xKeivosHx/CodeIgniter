@@ -1,8 +1,8 @@
 
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>Buscar productos</ion-title>
+  <ion-navbar color="primary">
+    <ion-title>Buscar producto</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -10,7 +10,7 @@
 
 <ion-content>
 
-  <ion-searchbar (ionInput)="buscar_productos($event)"></ion-searchbar>
+  <ion-searchbar (ionInput)="buscar_productos($event)" [(ngModel)]="buscar"></ion-searchbar>
 
   <ion-list>
     <ion-item *ngFor="let item of _ps.resultados"

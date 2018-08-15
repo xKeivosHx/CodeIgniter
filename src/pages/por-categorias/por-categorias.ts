@@ -18,9 +18,7 @@ export class PorCategoriasPage {
               private _ps:ProductosService ) {
 
     this.categoria = this.navParams.get("categoria");
-
-    this._ps.cargar_por_categoria( this.categoria.id );
-
+    this._ps.cargar_por_categoria( this.categoria.linea );
   }
 
 

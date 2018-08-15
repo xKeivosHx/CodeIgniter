@@ -38,8 +38,8 @@ export class ProductosService {
 
   }
 
-  cargar_por_categoria( categoria:number ){
-
+  cargar_por_categoria( categoria:string ){
+    console.log(categoria);
     let url = URL_SERVICIOS + "/productos/por_tipo/"+ categoria;
 
     this.http.get( url )

@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, ViewController } from 'ionic-angular';
-
 import { UsuarioService } from "../../providers/usuario";
 
 
@@ -9,9 +8,10 @@ import { UsuarioService } from "../../providers/usuario";
   templateUrl: 'login.html',
 })
 export class LoginPage {
-
+  
   correo:string = "";
   contrasena:string = "";
+  inicioSesion: any;
 
 
   constructor(public navCtrl: NavController,
@@ -22,7 +22,10 @@ export class LoginPage {
   }
 
   ingresar(){
-    
+    // console.log(this.correo);
+    // console.log(this.contrasena);
+    this.inicioSesion = this._us.ingresar(this.correo, this.contrasena);
+    console.log(this.inicioSesion);
    
   }
 
