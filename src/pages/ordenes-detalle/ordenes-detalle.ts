@@ -20,7 +20,7 @@ export class OrdenesDetallePage {
   }
 
   borrar_orden( orden_id:string ){
-
+    this._cs.borrar_orden(orden_id);
     
 
   }

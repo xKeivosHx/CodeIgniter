@@ -38,8 +38,6 @@ export class UsuarioService {
 
 
   ingresar( correo:string, contrasena:string ){
-    console.log(correo);
-    console.log(contrasena);
     let data = new URLSearchParams();
     data.append("correo", correo );
     data.append("contrasena", contrasena );
@@ -49,8 +47,6 @@ export class UsuarioService {
     return this.http.post( url, data )
                     .map( resp=>{
                     let data_resp = resp.json();
-                    console.log(resp.json());
-                    console.log( data_resp );
                     if( data_resp.error ){
                       this.alertCtrl.create({
                         title: "Error al iniciar",

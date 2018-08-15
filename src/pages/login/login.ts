@@ -24,8 +24,7 @@ export class LoginPage {
   ingresar(){
     // console.log(this.correo);
     // console.log(this.contrasena);
-    this.inicioSesion = this._us.ingresar(this.correo, this.contrasena);
-    console.log(this.inicioSesion);
+    this._us.ingresar(this.correo, this.contrasena);
    
   }
 

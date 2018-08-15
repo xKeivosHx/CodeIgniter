@@ -57,7 +57,7 @@ export class ProductosService {
   cargar_todos(){
 
     let promesa = new Promise(  (resolve, reject)=>{
-
+    
       let url = URL_SERVICIOS + "/productos/todos/" + this.pagina;
 
       this.http.get( url )
