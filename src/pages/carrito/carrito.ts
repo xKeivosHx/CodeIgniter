@@ -3,8 +3,6 @@ import { NavController, NavParams, ViewController } from 'ionic-angular';
 
 import { CarritoService } from "../../providers/carrito";
 
-
-
 @Component({
   selector: 'page-carrito',
   templateUrl: 'carrito.html',
@@ -16,7 +14,4 @@ export class CarritoPage {
               private _cs:CarritoService,
               private viewCtrl:ViewController ) {
   }
-
-
-
 }

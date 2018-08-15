@@ -1,35 +1,32 @@
-
 <ion-header>
 
-  <ion-navbar color="primary">
-    <ion-title>{{ categoria.linea }}</ion-title>
-  </ion-navbar>
+    <ion-navbar color="primary">
+        <ion-title>{{ categoria.linea }}</ion-title>
+    </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
 
-  <ion-list>
+    <ion-list>
 
-    <ion-item *ngFor="let item of _ps.por_categoria">
+        <ion-item *ngFor="let item of _ps.por_categoria">
 
-      <ion-thumbnail item-left>
-        <img [src]="item.codigo | imagen">
-      </ion-thumbnail>
+            <ion-thumbnail item-left>
+                <img [src]="item.codigo | imagen">
+            </ion-thumbnail>
 
-      <h2>{{ item.producto }}</h2>
-      <p> {{ item.proveedor }}</p>
+            <h2>{{ item.producto }}</h2>
+            <p> {{ item.proveedor }}</p>
 
-      <button ion-button clear item-right
-              [navPush]="productoPage"
-              [navParams]="{ producto: item }">
+            <button ion-button clear item-right [navPush]="productoPage" [navParams]="{ producto: item }">
         Ver
       </button>
 
-    </ion-item>
+        </ion-item>
 
-  </ion-list>
+    </ion-list>
 
 
 </ion-content>

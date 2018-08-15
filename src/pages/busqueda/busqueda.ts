@@ -14,21 +14,14 @@ export class Busqueda {
 
   productoPage = ProductoPage;
   buscar: string = "";
-  inicioSesion:any;
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               private _ps:ProductosService) {
   }
 
-
   buscar_productos(ev: any){
     console.log(this.buscar);
-    this._ps.buscar_producto(this.buscar);
-    
-    
+    this._ps.buscar_producto(this.buscar); 
   }
-
-
-
 }
