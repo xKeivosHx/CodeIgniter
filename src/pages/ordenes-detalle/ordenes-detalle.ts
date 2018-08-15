@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, ViewController } from 'ionic-angular';
+import { NavController, NavParams, ViewController, AlertController } from 'ionic-angular';
 
 import { CarritoService } from "../../providers/carrito";
 
@@ -13,6 +13,7 @@ export class OrdenesDetallePage {
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
+              private alertCtrl:AlertController,
               private viewCtrl: ViewController,
               private _cs:CarritoService ) {
 
@@ -24,6 +25,11 @@ export class OrdenesDetallePage {
     this._cs.borrar_orden(orden_id)
     .subscribe ( data =>{
       if(data.error){
+        this.alertCtrl.create({
+          title: "Error al borrar",
+          subTitle: data.mensaje,
+          buttons: ["OK"]
+        }).present();
       }
       else{
         this.navCtrl.pop()

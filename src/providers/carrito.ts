@@ -101,8 +101,6 @@ export class CarritoService {
 
     modal.onDidDismiss(  (abrirCarrito:boolean)=>{
 
-      console.log(abrirCarrito);
-
       if( abrirCarrito ){
         this.modalCtrl.create( CarritoPage ).present();
       }
@@ -141,31 +139,22 @@ export class CarritoService {
 
   }
 
-
   private guardar_storage(){
-
     if( this.platform.is("cordova") ){
       // dispositivo
       this.storage.set('items', this.items );
-
     }else{
       // computadora
       localStorage.setItem("items", JSON.stringify( this.items ) );
-
     }
-
-
   }
 
   cargar_storage(){
-
     let promesa = new Promise( ( resolve, reject )=>{
-
       if( this.platform.is("cordova") ){
         // dispositivo
         this.storage.ready()
                   .then( ()=>{
-
                   this.storage.get("items")
                           .then( items =>{
                             if( items ){
@@ -173,59 +162,35 @@ export class CarritoService {
                             }
                             resolve();
                         })
-
               })
-
-
       }else{
         // computadora
         if( localStorage.getItem("items") ){
           //Existe items en el localstorage
           this.items = JSON.parse( localStorage.getItem("items")  );
         }
-
         resolve();
-
       }
-
     });
-
     return promesa;
-
   }
 
-
-
   cargar_ordenes(){
-
     let url = `${ URL_SERVICIOS }/pedidos/obtener_pedidos/${ this._us.token }/${ this._us.id_usuario }`;
-
     this.http.get( url )
               .map( resp => resp.json() )
               .subscribe( data =>{
-
             if( data.error ){
               // manejar el error
             }else{
-
               this.ordenes = data.ordenes;
-
             }
-
         })
-
-
   }
 
   borrar_orden( orden_id:string ){
-
     let url = `${ URL_SERVICIOS }/pedidos/borrar_pedido/${ this._us.token }/${ this._us.id_usuario }/${ orden_id }`;
     return this.http.delete( url )
                   .map( resp => resp.json() );
-
-
   }
-
-
-
 }

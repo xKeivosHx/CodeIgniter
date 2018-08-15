@@ -12,7 +12,7 @@
 
     <ion-list>
         <button ion-item *ngFor="let orden of _cs.ordenes" [navPush]="ordenesDetalle" [navParams]="{ orden: orden }">
-      <strong>Orden ID:</strong>
+      <strong>Orden No.:</strong>
       {{ orden.id }}
     </button>
     </ion-list>
