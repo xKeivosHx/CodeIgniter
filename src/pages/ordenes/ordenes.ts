@@ -21,6 +21,7 @@ export class OrdenesPage {
 
   ionViewWillEnter() {
     console.log("cargando ordenes");
+    this._cs.cargar_ordenes();
     
   }
 

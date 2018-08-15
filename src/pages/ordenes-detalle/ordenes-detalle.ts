@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, ViewController } from 'ionic-angular';
 
 import { CarritoService } from "../../providers/carrito";
 
@@ -13,6 +13,7 @@ export class OrdenesDetallePage {
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
+              private viewCtrl: ViewController,
               private _cs:CarritoService ) {
 
     this.orden = this.navParams.get("orden");
@@ -20,8 +21,9 @@ export class OrdenesDetallePage {
   }
 
   borrar_orden( orden_id:string ){
+    console.log(orden_id);
     this._cs.borrar_orden(orden_id);
-    
+    this.viewCtrl.dismiss(true);
 
   }
 

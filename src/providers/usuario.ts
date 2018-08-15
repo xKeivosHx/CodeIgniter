@@ -57,6 +57,8 @@ export class UsuarioService {
                     }else{
                       this.token = data_resp.token;
                       this.id_usuario = data_resp.id_usuario;
+                      console.log(this.token);
+                      console.log(this.id_usuario);
                       // Guardar Storage
                       this.guardar_storage();
                     }

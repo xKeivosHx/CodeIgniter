@@ -24,7 +24,12 @@ export class LoginPage {
   ingresar(){
     // console.log(this.correo);
     // console.log(this.contrasena);
-    this._us.ingresar(this.correo, this.contrasena);
+    this._us.ingresar(this.correo, this.contrasena)
+    .subscribe( ()=>{
+      if (this._us.activo()){
+        this.viewCtrl.dismiss(true);
+      }
+    });
    
   }
 

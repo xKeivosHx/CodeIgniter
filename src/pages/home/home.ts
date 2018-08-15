@@ -25,8 +25,6 @@ export class HomePage {
 
 
   siguiente_pagina( infiniteScroll ){
-    console.log(infiniteScroll);
-    this.paguina ++;
     this._ps.cargar_todos(); 
   }
 
