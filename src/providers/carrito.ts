@@ -218,12 +218,8 @@ export class CarritoService {
   }
 
   borrar_orden( orden_id:string ){
-    console.log(this._us.token);
-    console.log(this._us.id_usuario);
-    console.log(orden_id);
 
     let url = `${ URL_SERVICIOS }/pedidos/borrar_pedido/${ this._us.token }/${ this._us.id_usuario }/${ orden_id }`;
-
     return this.http.delete( url )
                   .map( resp => resp.json() );
 

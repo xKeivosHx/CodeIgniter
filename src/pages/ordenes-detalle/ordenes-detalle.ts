@@ -21,9 +21,14 @@ export class OrdenesDetallePage {
   }
 
   borrar_orden( orden_id:string ){
-    console.log(orden_id);
-    this._cs.borrar_orden(orden_id);
-    this.viewCtrl.dismiss(true);
+    this._cs.borrar_orden(orden_id)
+    .subscribe ( data =>{
+      if(data.error){
+      }
+      else{
+        this.navCtrl.pop()
+      }
+    });
 
   }
 
