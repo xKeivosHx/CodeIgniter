@@ -31,7 +31,6 @@ export class ProductosService {
                 // problemas!
               }else{
                 this.lineas = data.lineas;
-                console.log(this.lineas);
               }
 
             })
@@ -93,7 +92,6 @@ export class ProductosService {
     for( let i = 0; i<arr.length; i+=tamano ){
       nuevoArreglo.push( arr.slice(i, i+tamano) );
     }
-    console.log( nuevoArreglo );
     return nuevoArreglo;
 
   }
